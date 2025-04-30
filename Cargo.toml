@@ -1,5 +1,5 @@
 [package]
-name = "wut"
+name = "mot-plugin-gitlab"
 version = "0.2.2"
 edition = "2021"
 
