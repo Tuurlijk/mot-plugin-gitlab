@@ -1,0 +1,9 @@
+[plugin]
+name = "gitlab-activity"
+version = "1.0.0"
+description = "Fetch GitLab commit activity as time entries"
+icon = "🦊"
+
+[executable]
+default = "gitlab-activity-plugin"
+windows = "gitlab-activity-plugin.exe" 

@@ -1,0 +1,2378 @@
+openapi: 3.0.1
+info:
+  title: GitLab API
+  version: v4
+servers:
+- url: //gitlab.com/
+tags:
+- name: award_emoji
+  description: Operations about award_emoji
+- name: badges
+  description: Operations about badges
+- name: groups
+  description: Operations about groups
+- name: runners
+  description: Operations about runners
+- name: group_avatar
+  description: Operations about group_avatars
+- name: invitations
+  description: Operations about invitations
+- name: members
+  description: Operations about members
+- name: personal_access_tokens
+  description: Operations about personal_access_tokens
+- name: group_access_tokens
+  description: Operations about group_access_tokens
+- name: wikis
+  description: Operations about wikis
+- name: alert_management
+  description: Operations about alert_managements
+- name: branches
+  description: Operations about branches
+- name: secure_files
+  description: Operations about secure_files
+- name: commits
+  description: Operations about commits
+- name: pages
+  description: Operations about pages
+- name: pages_domains
+  description: Operations about pages_domains
+- name: project_avatar
+  description: Operations about project_avatars
+- name: projects_job_token_scope
+  description: Operations about projects_job_token_scopes
+- name: project_snippets
+  description: Operations about project_snippets
+- name: protected_tags
+  description: Operations about protected_tags
+- name: remote_mirrors
+  description: Operations about remote_mirrors
+- name: project_access_tokens
+  description: Operations about project_access_tokens
+- name: tags
+  description: Operations about tags
+- name: batched_background_migrations
+  description: Operations about batched_background_migrations
+- name: admin
+  description: Operations about admins
+- name: migrations
+  description: Operations about migrations
+- name: broadcast_messages
+  description: Operations about broadcast_messages
+- name: applications
+  description: Operations about applications
+- name: avatar
+  description: Operations about avatars
+- name: bulk_imports
+  description: Operations about bulk_imports
+- name: job
+  description: Operations about jobs
+- name: jobs
+  description: Operations about jobs
+- name: events
+  description: Operations about events
+- name: users
+  description: Operations about users
+- name: keys
+  description: Operations about keys
+- name: markdown
+  description: Operations about markdowns
+- name: namespaces
+  description: Operations about namespaces
+- name: organizations
+  description: Operations about organizations
+- name: project_repository_storage_moves
+  description: Operations about project_repository_storage_moves
+- name: snippets
+  description: Operations about snippets
+- name: snippet_repository_storage_moves
+  description: Operations about snippet_repository_storage_moves
+- name: hooks
+  description: Operations about hooks
+- name: usage_data
+  description: Operations about usage_data
+- name: metrics
+  description: Operations about metrics
+- name: user
+  description: Operations about users
+- name: user_counts
+  description: Operations about user_counts
+- name: application
+  description: Operations about applications
+- name: import
+  description: Operations about imports
+- name: slack
+  description: Operations about slacks
+- name: topics
+  description: Operations about topics
+- name: web_commits
+  description: Operations about web_commits
+- name: access_requests
+  description: Operations related to access requests
+- name: ci_lint
+  description: Operations related to linting a CI config file
+- name: ci_resource_groups
+  description: Operations to manage job concurrency with resource groups
+- name: ci_variables
+  description: Operations related to CI/CD variables
+- name: cluster_agents
+  description: Operations related to the GitLab agent for Kubernetes
+- name: clusters
+  description: Operations related to clusters
+- name: composer_packages
+  description: Operations related to Composer packages
+- name: conan_packages
+  description: Operations related to Conan packages
+- name: container_registry
+  description: Operations related to container registry
+- name: container_registry_event
+  description: Operations related to container registry events
+- name: debian_distribution
+  description: Operations related to Debian Linux distributions
+- name: debian_packages
+  description: Operations related to Debian Linux packages
+- name: dependency_proxy
+  description: Operations to manage dependency proxy for a groups
+- name: deploy_keys
+  description: Operations related to deploy keys
+- name: deploy_tokens
+  description: Operations related to deploy tokens
+- name: deployments
+  description: Operations related to deployments
+- name: dora_metrics
+  description: Operations related to DevOps Research and Assessment (DORA) key metrics
+- name: environments
+  description: Operations related to environments
+- name: error_tracking_client_keys
+  description: Operations related to error tracking client keys
+- name: error_tracking_project_settings
+  description: Operations related to error tracking project settings
+- name: feature_flags_user_lists
+  description: Operations related to accessing GitLab feature flag user lists
+- name: feature_flags
+  description: Operations related to feature flags
+- name: features
+  description: Operations related to managing Flipper-based feature flags
+- name: freeze_periods
+  description: Operations related to deploy freeze periods
+- name: generic_packages
+  description: Operations related to Generic packages
+- name: geo
+  description: Operations related to Geo
+- name: geo_nodes
+  description: Operations related Geo Nodes
+- name: go_proxy
+  description: Operations related to Go Proxy
+- name: group_export
+  description: Operations related to exporting groups
+- name: group_import
+  description: Operations related to importing groups
+- name: group_packages
+  description: Operations related to group packages
+- name: helm_packages
+  description: Operations related to Helm packages
+- name: integrations
+  description: Operations related to integrations
+- name: issue_links
+  description: Operations related to issue links
+- name: jira_connect_subscriptions
+  description: Operations related to JiraConnect subscriptions
+- name: maven_packages
+  description: Operations related to Maven packages
+- name: merge_requests
+  description: Operations related to merge requests
+- name: metadata
+  description: Operations related to metadata of the GitLab instance
+- name: ml_model_registry
+  description: Operations related to Model registry
+- name: npm_packages
+  description: Operations related to NPM packages
+- name: nuget_packages
+  description: Operations related to Nuget packages
+- name: package_files
+  description: Operations about package files
+- name: plan_limits
+  description: Operations related to plan limits
+- name: project_export
+  description: Operations related to exporting projects
+- name: project_hooks
+  description: Operations related to project hooks
+- name: project_import
+  description: Operations related to importing projects
+- name: project_import_bitbucket
+  description: Operations related to importing BitBucket projects
+- name: project_import_github
+  description: Operations related to importing GitHub projects
+- name: project_packages
+  description: Operations related to project packages
+- name: projects
+  description: Operations related to projects
+- name: protected environments
+  description: Operations related to protected environments
+- name: pypi_packages
+  description: Operations related to PyPI packages
+- name: release_links
+  description: Operations related to release assets (links)
+- name: releases
+  description: Operations related to releases
+- name: resource_milestone_events
+  description: Operations about resource milestone events
+- name: rpm_packages
+  description: Operations related to RPM packages
+- name: rubygem_packages
+  description: Operations related to RubyGems
+- name: suggestions
+  description: Operations related to suggestions
+- name: system_hooks
+  description: Operations related to system hooks
+- name: terraform_state
+  description: Operations related to Terraform state files
+- name: terraform_registry
+  description: Operations related to the Terraform module registry
+- name: unleash_api
+  description: Operations related to Unleash API
+paths:
+  /api/v4/events:
+    get:
+      tags:
+      - events
+      summary: List currently authenticated user's events
+      description: This feature was introduced in GitLab 9.3.
+      operationId: getApiV4Events
+      parameters:
+      - name: scope
+        in: query
+        description: Include all events across a user’s projects
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Current page number
+        schema:
+          type: integer
+          format: int32
+          default: 1
+      - name: per_page
+        in: query
+        description: Number of items per page
+        schema:
+          type: integer
+          format: int32
+          default: 20
+      - name: action
+        in: query
+        description: Event action to filter on
+        schema:
+          type: string
+      - name: target_type
+        in: query
+        description: Event target type to filter on
+        schema:
+          type: string
+          enum:
+          - issue
+          - milestone
+          - merge_request
+          - note
+          - project
+          - snippet
+          - user
+          - wiki
+          - design
+      - name: before
+        in: query
+        description: Include only events created before this date
+        schema:
+          type: string
+          format: date
+      - name: after
+        in: query
+        description: Include only events created after this date
+        schema:
+          type: string
+          format: date
+      - name: sort
+        in: query
+        description: Return events sorted in ascending and descending order
+        schema:
+          type: string
+          default: desc
+          enum:
+          - asc
+          - desc
+      responses:
+        '200':
+          description: List currently authenticated user's events
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/API_Entities_Event'
+        '401':
+          description: Unauthorized
+          content: {}
+  /api/v4/projects/{id}:
+    get:
+      tags:
+      - projects
+      description: Get a single project
+      operationId: getApiV4ProjectsId
+      parameters:
+      - name: id
+        in: path
+        description: The ID or URL-encoded path of the project
+        required: true
+        schema:
+          type: string
+      - name: statistics
+        in: query
+        description: Include project statistics
+        schema:
+          type: boolean
+          default: false
+      - name: with_custom_attributes
+        in: query
+        description: Include custom attributes in the response
+        schema:
+          type: boolean
+          default: false
+      - name: license
+        in: query
+        description: Include project license data
+        schema:
+          type: boolean
+          default: false
+      responses:
+        '200':
+          description: Get a single project
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/API_Entities_ProjectWithAccess'
+    put:
+      tags:
+      - projects
+      description: Update an existing project
+      operationId: putApiV4ProjectsId
+      parameters:
+      - name: id
+        in: path
+        description: The ID or URL-encoded path of the project
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/putApiV4ProjectsId'
+        required: true
+      responses:
+        '200':
+          description: Update an existing project
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/API_Entities_Project'
+        '400':
+          description: Bad request
+          content: {}
+        '403':
+          description: Unauthenticated
+          content: {}
+      x-codegen-request-body-name: putApiV4ProjectsId
+    delete:
+      tags:
+      - projects
+      description: Delete a project
+      operationId: deleteApiV4ProjectsId
+      parameters:
+      - name: id
+        in: path
+        description: The ID or URL-encoded path of the project
+        required: true
+        schema:
+          type: string
+      responses:
+        '202':
+          description: Delete a project
+          content: {}
+        '403':
+          description: Unauthenticated
+          content: {}
+        '404':
+          description: Not found
+          content: {}
+  /api/v4/projects/{id}/repository/commits:
+    get:
+      tags:
+      - commits
+      description: Get a project repository commits
+      operationId: getApiV4ProjectsIdRepositoryCommits
+      parameters:
+      - name: id
+        in: path
+        description: The ID or URL-encoded path of the project
+        required: true
+        schema:
+          type: string
+      - name: ref_name
+        in: query
+        description: The name of a repository branch or tag, if not given the default branch is used
+        schema:
+          type: string
+      - name: since
+        in: query
+        description: Only commits after or on this date will be returned
+        schema:
+          type: string
+          format: date-time
+      - name: until
+        in: query
+        description: Only commits before or on this date will be returned
+        schema:
+          type: string
+          format: date-time
+      - name: path
+        in: query
+        description: The file path
+        schema:
+          type: string
+      - name: author
+        in: query
+        description: Search commits by commit author
+        schema:
+          type: string
+      - name: all
+        in: query
+        description: Every commit will be returned
+        schema:
+          type: boolean
+      - name: with_stats
+        in: query
+        description: Stats about each commit will be added to the response
+        schema:
+          type: boolean
+      - name: first_parent
+        in: query
+        description: Only include the first parent of merges
+        schema:
+          type: boolean
+      - name: order
+        in: query
+        description: List commits in order
+        schema:
+          type: string
+          default: default
+          enum:
+          - default
+          - topo
+      - name: trailers
+        in: query
+        description: Parse and include Git trailers for every commit
+        schema:
+          type: boolean
+          default: false
+      - name: page
+        in: query
+        description: Current page number
+        schema:
+          type: integer
+          format: int32
+          default: 1
+      - name: per_page
+        in: query
+        description: Number of items per page
+        schema:
+          type: integer
+          format: int32
+          default: 20
+      responses:
+        '200':
+          description: Get a project repository commits
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/API_Entities_Commit'
+        '400':
+          description: Bad request
+          content: {}
+        '401':
+          description: Unauthorized
+          content: {}
+        '404':
+          description: Not found
+          content: {}
+    post:
+      tags:
+      - commits
+      summary: Commit multiple file changes as one commit
+      description: This feature was introduced in GitLab 8.13
+      operationId: postApiV4ProjectsIdRepositoryCommits
+      parameters:
+      - name: id
+        in: path
+        description: The ID or URL-encoded path of the project
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/postApiV4ProjectsIdRepositoryCommits'
+        required: true
+      responses:
+        '200':
+          description: Commit multiple file changes as one commit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/API_Entities_CommitDetail'
+        '400':
+          description: Bad request
+          content: {}
+        '401':
+          description: Unauthorized
+          content: {}
+        '403':
+          description: Forbidden
+          content: {}
+        '404':
+          description: Not found
+          content: {}
+      x-codegen-request-body-name: postApiV4ProjectsIdRepositoryCommits
+components:
+  schemas:
+    API_Entities_CustomAttribute:
+      type: object
+      properties:
+        key:
+          type: string
+          example: foo
+        value:
+          type: string
+          example: bar
+      description: API_Entities_CustomAttribute model
+    API_Entities_UserBasic:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        username:
+          type: string
+          example: admin
+        name:
+          type: string
+          example: Administrator
+        state:
+          type: string
+          example: active
+        locked:
+          type: boolean
+        avatar_url:
+          type: string
+          example: https://gravatar.com/avatar/1
+        avatar_path:
+          type: string
+          example: /user/avatar/28/The-Big-Lebowski-400-400.png
+        custom_attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/API_Entities_CustomAttribute'
+        web_url:
+          type: string
+          example: https://gitlab.example.com/root
+      description: API_Entities_UserBasic model
+    API_Entities_Project:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        description:
+          type: string
+          example: desc
+        name:
+          type: string
+          example: project1
+        name_with_namespace:
+          type: string
+          example: John Doe / project1
+        path:
+          type: string
+          example: project1
+        path_with_namespace:
+          type: string
+          example: namespace1/project1
+        created_at:
+          type: string
+          format: date-time
+          example: 2020-05-07T04:27:17.016Z
+        default_branch:
+          type: string
+          example: main
+        tag_list:
+          type: array
+          example: tag
+          items:
+            type: string
+        topics:
+          type: array
+          example: topic
+          items:
+            type: string
+        ssh_url_to_repo:
+          type: string
+          example: git@gitlab.example.com:gitlab/gitlab.git
+        http_url_to_repo:
+          type: string
+          example: https://gitlab.example.com/gitlab/gitlab.git
+        web_url:
+          type: string
+          example: https://gitlab.example.com/gitlab/gitlab
+        readme_url:
+          type: string
+          example: https://gitlab.example.com/gitlab/gitlab/blob/master/README.md
+        forks_count:
+          type: integer
+          example: 1
+        license_url:
+          type: string
+          example: https://gitlab.example.com/gitlab/gitlab/blob/master/LICENCE
+        license:
+          $ref: '#/components/schemas/API_Entities_LicenseBasic'
+        avatar_url:
+          type: string
+          example: http://example.com/uploads/project/avatar/3/uploads/avatar.png
+        star_count:
+          type: integer
+          example: 1
+        last_activity_at:
+          type: string
+          format: date-time
+          example: 2013-09-30T13:46:02Z
+        namespace:
+          $ref: '#/components/schemas/API_Entities_NamespaceBasic'
+        custom_attributes:
+          $ref: '#/components/schemas/API_Entities_CustomAttribute'
+        repository_storage:
+          type: string
+          example: default
+        forked_from_project:
+          $ref: '#/components/schemas/API_Entities_BasicProjectDetails'
+        container_registry_image_prefix:
+          type: string
+          example: registry.gitlab.example.com/gitlab/gitlab-client
+        _links:
+          type: object
+          properties:
+            self:
+              type: string
+              example: https://gitlab.example.com/api/v4/projects/4
+            issues:
+              type: string
+              example: https://gitlab.example.com/api/v4/projects/4/issues
+            merge_requests:
+              type: string
+              example: https://gitlab.example.com/api/v4/projects/4/merge_requests
+            repo_branches:
+              type: string
+              example: https://gitlab.example.com/api/v4/projects/4/repository/branches
+            labels:
+              type: string
+              example: https://gitlab.example.com/api/v4/projects/4/labels
+            events:
+              type: string
+              example: https://gitlab.example.com/api/v4/projects/4/events
+            members:
+              type: string
+              example: https://gitlab.example.com/api/v4/projects/4/members
+            cluster_agents:
+              type: string
+              example: https://gitlab.example.com/api/v4/projects/4/cluster_agents
+        packages_enabled:
+          type: boolean
+        empty_repo:
+          type: boolean
+        archived:
+          type: boolean
+        visibility:
+          type: string
+          example: public
+        owner:
+          $ref: '#/components/schemas/API_Entities_UserBasic'
+        resolve_outdated_diff_discussions:
+          type: boolean
+        container_expiration_policy:
+          $ref: '#/components/schemas/API_Entities_ContainerExpirationPolicy'
+        repository_object_format:
+          type: string
+          example: sha1
+        issues_enabled:
+          type: boolean
+        merge_requests_enabled:
+          type: boolean
+        wiki_enabled:
+          type: boolean
+        jobs_enabled:
+          type: boolean
+        snippets_enabled:
+          type: boolean
+        container_registry_enabled:
+          type: boolean
+        service_desk_enabled:
+          type: boolean
+        service_desk_address:
+          type: string
+          example: address@example.com
+        can_create_merge_request_in:
+          type: boolean
+        issues_access_level:
+          type: string
+          example: enabled
+        repository_access_level:
+          type: string
+          example: enabled
+        merge_requests_access_level:
+          type: string
+          example: enabled
+        forking_access_level:
+          type: string
+          example: enabled
+        wiki_access_level:
+          type: string
+          example: enabled
+        builds_access_level:
+          type: string
+          example: enabled
+        snippets_access_level:
+          type: string
+          example: enabled
+        pages_access_level:
+          type: string
+          example: enabled
+        analytics_access_level:
+          type: string
+          example: enabled
+        container_registry_access_level:
+          type: string
+          example: enabled
+        security_and_compliance_access_level:
+          type: string
+          example: enabled
+        releases_access_level:
+          type: string
+          example: enabled
+        environments_access_level:
+          type: string
+          example: enabled
+        feature_flags_access_level:
+          type: string
+          example: enabled
+        infrastructure_access_level:
+          type: string
+          example: enabled
+        monitor_access_level:
+          type: string
+          example: enabled
+        model_experiments_access_level:
+          type: string
+          example: enabled
+        model_registry_access_level:
+          type: string
+          example: enabled
+        emails_disabled:
+          type: boolean
+        emails_enabled:
+          type: boolean
+        shared_runners_enabled:
+          type: boolean
+        lfs_enabled:
+          type: boolean
+        creator_id:
+          type: integer
+          example: 1
+        mr_default_target_self:
+          type: boolean
+        import_url:
+          type: string
+          example: https://gitlab.com/gitlab/gitlab.git
+        import_type:
+          type: string
+          example: git
+        import_status:
+          type: string
+          example: none
+        import_error:
+          type: string
+          example: Import error
+        open_issues_count:
+          type: integer
+          example: 1
+        description_html:
+          type: string
+        updated_at:
+          type: string
+          format: date-time
+          example: 2020-05-07T04:27:17.016Z
+        ci_default_git_depth:
+          type: integer
+          example: 20
+        ci_delete_pipelines_in_seconds:
+          type: integer
+          example: 86400
+        ci_forward_deployment_enabled:
+          type: boolean
+        ci_forward_deployment_rollback_allowed:
+          type: boolean
+        ci_job_token_scope_enabled:
+          type: boolean
+        ci_separated_caches:
+          type: boolean
+        ci_allow_fork_pipelines_to_run_in_parent_project:
+          type: boolean
+        ci_id_token_sub_claim_components:
+          type: array
+          items:
+            type: string
+        build_git_strategy:
+          type: string
+          example: fetch
+        keep_latest_artifact:
+          type: boolean
+        restrict_user_defined_variables:
+          type: boolean
+        ci_pipeline_variables_minimum_override_role:
+          type: string
+        runners_token:
+          type: string
+          example: b8547b1dc37721d05889db52fa2f02
+        runner_token_expiration_interval:
+          type: integer
+          example: 3600
+        group_runners_enabled:
+          type: boolean
+        auto_cancel_pending_pipelines:
+          type: string
+          example: enabled
+        build_timeout:
+          type: integer
+          example: 3600
+        auto_devops_enabled:
+          type: boolean
+        auto_devops_deploy_strategy:
+          type: string
+          example: continuous
+        ci_push_repository_for_job_token_allowed:
+          type: boolean
+        ci_config_path:
+          type: string
+          example: ''
+        public_jobs:
+          type: boolean
+        shared_with_groups:
+          type: array
+          items:
+            type: string
+        only_allow_merge_if_pipeline_succeeds:
+          type: boolean
+        allow_merge_on_skipped_pipeline:
+          type: boolean
+        request_access_enabled:
+          type: boolean
+        only_allow_merge_if_all_discussions_are_resolved:
+          type: boolean
+        remove_source_branch_after_merge:
+          type: boolean
+        printing_merge_request_link_enabled:
+          type: boolean
+        merge_method:
+          type: string
+          example: merge
+        squash_option:
+          type: string
+          example: default_off
+        enforce_auth_checks_on_uploads:
+          type: boolean
+        suggestion_commit_message:
+          type: string
+          example: Suggestion message
+        merge_commit_template:
+          type: string
+          example: '%(title)'
+        squash_commit_template:
+          type: string
+          example: '%(source_branch)'
+        issue_branch_template:
+          type: string
+          example: '%(title)'
+        statistics:
+          $ref: '#/components/schemas/API_Entities_ProjectStatistics'
+        warn_about_potentially_unwanted_characters:
+          type: boolean
+        autoclose_referenced_issues:
+          type: boolean
+        max_artifacts_size:
+          type: integer
+        approvals_before_merge:
+          type: integer
+        mirror:
+          type: boolean
+        mirror_user_id:
+          type: string
+        mirror_trigger_builds:
+          type: string
+        only_mirror_protected_branches:
+          type: string
+        mirror_overwrites_diverged_branches:
+          type: string
+        external_authorization_classification_label:
+          type: string
+        marked_for_deletion_at:
+          type: string
+        marked_for_deletion_on:
+          type: string
+        requirements_enabled:
+          type: boolean
+        requirements_access_level:
+          type: string
+        security_and_compliance_enabled:
+          type: boolean
+        secret_push_protection_enabled:
+          type: boolean
+        pre_receive_secret_detection_enabled:
+          type: boolean
+        compliance_frameworks:
+          type: array
+        issues_template:
+          type: string
+        merge_requests_template:
+          type: string
+        ci_restrict_pipeline_cancellation_role:
+          type: string
+        merge_pipelines_enabled:
+          type: boolean
+        merge_trains_enabled:
+          type: boolean
+        merge_trains_skip_train_allowed:
+          type: boolean
+        only_allow_merge_if_all_status_checks_passed:
+          type: boolean
+        allow_pipeline_trigger_approve_deployment:
+          type: boolean
+        prevent_merge_without_jira_issue:
+          type: boolean
+      description: API_Entities_Project model
+    API_Entities_LicenseBasic:
+      type: object
+      properties:
+        key:
+          type: string
+          example: gpl-3.0
+        name:
+          type: string
+          example: GNU General Public License v3.0
+        nickname:
+          type: string
+          example: GNU GPLv3
+        html_url:
+          type: string
+          example: http://choosealicense.com/licenses/gpl-3.0
+        source_url:
+          type: string
+    API_Entities_NamespaceBasic:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 2
+        name:
+          type: string
+          example: project
+        path:
+          type: string
+          example: my_project
+        kind:
+          type: string
+          example: project
+        full_path:
+          type: string
+          example: group/my_project
+        parent_id:
+          type: integer
+          example: 1
+        avatar_url:
+          type: string
+          example: https://example.com/avatar/12345
+        web_url:
+          type: string
+          example: https://example.com/group/my_project
+    API_Entities_BasicProjectDetails:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        description:
+          type: string
+          example: desc
+        name:
+          type: string
+          example: project1
+        name_with_namespace:
+          type: string
+          example: John Doe / project1
+        path:
+          type: string
+          example: project1
+        path_with_namespace:
+          type: string
+          example: namespace1/project1
+        created_at:
+          type: string
+          format: date-time
+          example: 2020-05-07T04:27:17.016Z
+        default_branch:
+          type: string
+          example: main
+        tag_list:
+          type: array
+          example: tag
+          items:
+            type: string
+        topics:
+          type: array
+          example: topic
+          items:
+            type: string
+        ssh_url_to_repo:
+          type: string
+          example: git@gitlab.example.com:gitlab/gitlab.git
+        http_url_to_repo:
+          type: string
+          example: https://gitlab.example.com/gitlab/gitlab.git
+        web_url:
+          type: string
+          example: https://gitlab.example.com/gitlab/gitlab
+        readme_url:
+          type: string
+          example: https://gitlab.example.com/gitlab/gitlab/blob/master/README.md
+        forks_count:
+          type: integer
+          example: 1
+        license_url:
+          type: string
+          example: https://gitlab.example.com/gitlab/gitlab/blob/master/LICENCE
+        license:
+          $ref: '#/components/schemas/API_Entities_LicenseBasic'
+        avatar_url:
+          type: string
+          example: http://example.com/uploads/project/avatar/3/uploads/avatar.png
+        star_count:
+          type: integer
+          example: 1
+        last_activity_at:
+          type: string
+          format: date-time
+          example: 2013-09-30T13:46:02Z
+        namespace:
+          $ref: '#/components/schemas/API_Entities_NamespaceBasic'
+        custom_attributes:
+          $ref: '#/components/schemas/API_Entities_CustomAttribute'
+        repository_storage:
+          type: string
+          example: default
+      description: API_Entities_BasicProjectDetails model
+    API_Entities_ContainerExpirationPolicy:
+      type: object
+      properties:
+        cadence:
+          type: string
+        enabled:
+          type: boolean
+        keep_n:
+          type: integer
+        older_than:
+          type: string
+        name_regex:
+          type: string
+        name_regex_keep:
+          type: string
+        next_run_at:
+          type: string
+    API_Entities_ProjectStatistics:
+      type: object
+      properties:
+        commit_count:
+          type: string
+        storage_size:
+          type: string
+        repository_size:
+          type: string
+        wiki_size:
+          type: string
+        lfs_objects_size:
+          type: string
+        job_artifacts_size:
+          type: string
+        pipeline_artifacts_size:
+          type: string
+        packages_size:
+          type: string
+        snippets_size:
+          type: string
+        uploads_size:
+          type: string
+        container_registry_size:
+          type: string
+    API_Entities_Commit:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 2695effb5807a22ff3d138d593fd856244e155e7
+        short_id:
+          type: string
+          example: 2695effb
+        created_at:
+          type: string
+          format: date-time
+          example: 2017-07-26T11:08:53+02:00
+        parent_ids:
+          type: array
+          example: 2a4b78934375d7f53875269ffd4f45fd83a84ebe
+          items:
+            type: string
+        title:
+          type: string
+          example: Initial commit
+        message:
+          type: string
+          example: Initial commit
+        author_name:
+          type: string
+          example: John Smith
+        author_email:
+          type: string
+          example: john@example.com
+        authored_date:
+          type: string
+          format: date-time
+          example: 2012-05-28T04:42:42-07:00
+        committer_name:
+          type: string
+          example: Jack Smith
+        committer_email:
+          type: string
+          example: jack@example.com
+        committed_date:
+          type: string
+          format: date-time
+          example: 2012-05-28T04:42:42-07:00
+        trailers:
+          type: object
+          properties: {}
+          example: '{ "Merged-By": "Jane Doe janedoe@gitlab.com" }'
+        extended_trailers:
+          type: object
+          properties: {}
+          example: '{ "Signed-off-by": ["John Doe <johndoe@gitlab.com>", "Jane Doe <janedoe@gitlab.com>"] }'
+        web_url:
+          type: string
+          example: https://gitlab.example.com/janedoe/gitlab-foss/-/commit/ed899a2f4b50b4370feeea94676502b42383c746
+      description: API_Entities_Commit model
+    API_Entities_WikiPageBasic:
+      type: object
+      properties:
+        format:
+          type: string
+          example: markdown
+        slug:
+          type: string
+          example: deploy
+        title:
+          type: string
+          example: deploy
+      description: API_Entities_WikiPageBasic model
+    API_Entities_Ci_PipelineBasic:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        iid:
+          type: integer
+          example: 2
+        project_id:
+          type: integer
+          example: 3
+        sha:
+          type: string
+          example: 0ec9e58fdfca6cdd6652c083c9edb53abc0bad52
+        ref:
+          type: string
+          example: feature-branch
+        status:
+          type: string
+          example: success
+        source:
+          type: string
+          example: push
+        created_at:
+          type: string
+          format: date-time
+          example: 2022-10-21T16:49:48+02:00
+        updated_at:
+          type: string
+          format: date-time
+          example: 2022-10-21T16:49:48+02:00
+        web_url:
+          type: string
+          example: https://gitlab.example.com/gitlab-org/gitlab-foss/-/pipelines/61
+      description: API_Entities_Ci_PipelineBasic model
+    postApiV4ProjectsIdRepositoryCommits:
+      required:
+      - actions
+      - branch
+      - commit_message
+      type: object
+      properties:
+        branch:
+          type: string
+          description: Name of the branch to commit into. To create a new branch, also provide either `start_branch` or `start_sha`, and optionally `start_project`.
+          example: master
+        commit_message:
+          type: string
+          description: Commit message
+          example: initial commit
+        actions:
+          type: array
+          description: Actions to perform in commit
+          items:
+            required:
+            - action
+            - content
+            - execute_filemode
+            - file_path
+            - previous_path
+            type: object
+            properties:
+              action:
+                type: string
+                description: The action to perform, `create`, `delete`, `move`, `update`, `chmod`
+                enum:
+                - create
+                - update
+                - move
+                - delete
+                - chmod
+              file_path:
+                type: string
+                description: Full path to the file.
+                example: lib/class.rb
+              previous_path:
+                type: string
+                description: Original full path to the file being moved.
+                example: lib/class.rb
+              content:
+                type: string
+                description: File content
+                example: Some file content
+              encoding:
+                type: string
+                description: '`text` or `base64`'
+                default: text
+                enum:
+                - text
+                - base64
+              last_commit_id:
+                type: string
+                description: Last known file commit id
+                example: 2695effb5807a22ff3d138d593fd856244e155e7
+              execute_filemode:
+                type: boolean
+                description: When `true/false` enables/disables the execute flag on the file.
+        start_branch:
+          type: string
+          description: Name of the branch to start the new branch from
+          example: staging
+        start_sha:
+          type: string
+          description: SHA of the commit to start the new branch from
+          example: 2695effb5807a22ff3d138d593fd856244e155e7
+        start_project:
+          type: integer
+          description: The ID or path of the project to start the new branch from
+          example: 1
+        author_email:
+          type: string
+          description: Author email for commit
+          example: janedoe@example.com
+        author_name:
+          type: string
+          description: Author name for commit
+          example: Jane Doe
+        stats:
+          type: boolean
+          description: Include commit stats
+          default: true
+        force:
+          type: boolean
+          description: When `true` overwrites the target branch with a new commit based on the `start_branch` or `start_sha`
+          default: false
+      description: Commit multiple file changes as one commit
+    API_Entities_CommitDetail:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 2695effb5807a22ff3d138d593fd856244e155e7
+        short_id:
+          type: string
+          example: 2695effb
+        created_at:
+          type: string
+          format: date-time
+          example: 2017-07-26T11:08:53+02:00
+        parent_ids:
+          type: array
+          example: 2a4b78934375d7f53875269ffd4f45fd83a84ebe
+          items:
+            type: string
+        title:
+          type: string
+          example: Initial commit
+        message:
+          type: string
+          example: Initial commit
+        author_name:
+          type: string
+          example: John Smith
+        author_email:
+          type: string
+          example: john@example.com
+        authored_date:
+          type: string
+          format: date-time
+          example: 2012-05-28T04:42:42-07:00
+        committer_name:
+          type: string
+          example: Jack Smith
+        committer_email:
+          type: string
+          example: jack@example.com
+        committed_date:
+          type: string
+          format: date-time
+          example: 2012-05-28T04:42:42-07:00
+        trailers:
+          type: object
+          properties: {}
+          example: '{ "Merged-By": "Jane Doe janedoe@gitlab.com" }'
+        extended_trailers:
+          type: object
+          properties: {}
+          example: '{ "Signed-off-by": ["John Doe <johndoe@gitlab.com>", "Jane Doe <janedoe@gitlab.com>"] }'
+        web_url:
+          type: string
+          example: https://gitlab.example.com/janedoe/gitlab-foss/-/commit/ed899a2f4b50b4370feeea94676502b42383c746
+        stats:
+          $ref: '#/components/schemas/API_Entities_CommitStats'
+        status:
+          type: string
+          example: success
+        project_id:
+          type: integer
+          example: 1
+        last_pipeline:
+          $ref: '#/components/schemas/API_Entities_Ci_PipelineBasic'
+      description: API_Entities_CommitDetail model
+    API_Entities_CommitStats:
+      type: object
+      properties:
+        additions:
+          type: integer
+          example: 1
+        deletions:
+          type: integer
+          example: 0
+        total:
+          type: integer
+          example: 1
+    API_Entities_Event:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        project_id:
+          type: integer
+          example: 2
+        action_name:
+          type: string
+          example: closed
+        target_id:
+          type: integer
+          example: 160
+        target_iid:
+          type: integer
+          example: 157
+        target_type:
+          type: string
+          example: Issue
+        author_id:
+          type: integer
+          example: 25
+        target_title:
+          type: string
+          example: Public project search field
+        created_at:
+          type: string
+          example: 2017-02-09T10:43:19.667Z
+        note:
+          $ref: '#/components/schemas/API_Entities_Note'
+        author:
+          $ref: '#/components/schemas/API_Entities_UserBasic'
+        wiki_page:
+          $ref: '#/components/schemas/API_Entities_WikiPageBasic'
+        imported:
+          type: boolean
+          example: false
+        imported_from:
+          type: string
+          example: none
+        push_data:
+          $ref: '#/components/schemas/API_Entities_PushEventPayload'
+        author_username:
+          type: string
+          example: root
+      description: API_Entities_Event model
+    API_Entities_Note:
+      type: object
+      properties:
+        id:
+          type: integer
+        type:
+          type: string
+        body:
+          type: string
+        attachment:
+          type: string
+        author:
+          $ref: '#/components/schemas/API_Entities_UserBasic'
+        created_at:
+          type: string
+        updated_at:
+          type: string
+        system:
+          type: boolean
+        noteable_id:
+          type: integer
+        noteable_type:
+          type: string
+        project_id:
+          type: integer
+        commit_id:
+          type: string
+        position:
+          type: object
+        resolvable:
+          type: boolean
+        resolved:
+          type: boolean
+        resolved_by:
+          $ref: '#/components/schemas/API_Entities_UserBasic'
+        resolved_at:
+          type: string
+        confidential:
+          type: boolean
+        internal:
+          type: boolean
+        imported:
+          type: boolean
+        imported_from:
+          type: string
+          example: github
+        noteable_iid:
+          type: integer
+        commands_changes:
+          type: object
+    API_Entities_PushEventPayload:
+      type: object
+      properties:
+        commit_count:
+          type: integer
+          example: 1
+        action:
+          type: string
+          example: pushed
+        ref_type:
+          type: string
+          example: branch
+        commit_from:
+          type: string
+          example: 50d4420237a9de7be1304607147aec22e4a14af7
+        commit_to:
+          type: string
+          example: c5feabde2d8cd023215af4d2ceeb7a64839fc428
+        ref:
+          type: string
+          example: master
+        commit_title:
+          type: string
+          example: Add simple search to projects in public area
+        ref_count:
+          type: integer
+          example: 1
+    API_Entities_ProjectWithAccess:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        description:
+          type: string
+          example: desc
+        name:
+          type: string
+          example: project1
+        name_with_namespace:
+          type: string
+          example: John Doe / project1
+        path:
+          type: string
+          example: project1
+        path_with_namespace:
+          type: string
+          example: namespace1/project1
+        created_at:
+          type: string
+          format: date-time
+          example: 2020-05-07T04:27:17.016Z
+        default_branch:
+          type: string
+          example: main
+        tag_list:
+          type: array
+          example: tag
+          items:
+            type: string
+        topics:
+          type: array
+          example: topic
+          items:
+            type: string
+        ssh_url_to_repo:
+          type: string
+          example: git@gitlab.example.com:gitlab/gitlab.git
+        http_url_to_repo:
+          type: string
+          example: https://gitlab.example.com/gitlab/gitlab.git
+        web_url:
+          type: string
+          example: https://gitlab.example.com/gitlab/gitlab
+        readme_url:
+          type: string
+          example: https://gitlab.example.com/gitlab/gitlab/blob/master/README.md
+        forks_count:
+          type: integer
+          example: 1
+        license_url:
+          type: string
+          example: https://gitlab.example.com/gitlab/gitlab/blob/master/LICENCE
+        license:
+          $ref: '#/components/schemas/API_Entities_LicenseBasic'
+        avatar_url:
+          type: string
+          example: http://example.com/uploads/project/avatar/3/uploads/avatar.png
+        star_count:
+          type: integer
+          example: 1
+        last_activity_at:
+          type: string
+          format: date-time
+          example: 2013-09-30T13:46:02Z
+        namespace:
+          $ref: '#/components/schemas/API_Entities_NamespaceBasic'
+        custom_attributes:
+          $ref: '#/components/schemas/API_Entities_CustomAttribute'
+        repository_storage:
+          type: string
+          example: default
+        forked_from_project:
+          $ref: '#/components/schemas/API_Entities_BasicProjectDetails'
+        container_registry_image_prefix:
+          type: string
+          example: registry.gitlab.example.com/gitlab/gitlab-client
+        _links:
+          type: object
+          properties:
+            self:
+              type: string
+              example: https://gitlab.example.com/api/v4/projects/4
+            issues:
+              type: string
+              example: https://gitlab.example.com/api/v4/projects/4/issues
+            merge_requests:
+              type: string
+              example: https://gitlab.example.com/api/v4/projects/4/merge_requests
+            repo_branches:
+              type: string
+              example: https://gitlab.example.com/api/v4/projects/4/repository/branches
+            labels:
+              type: string
+              example: https://gitlab.example.com/api/v4/projects/4/labels
+            events:
+              type: string
+              example: https://gitlab.example.com/api/v4/projects/4/events
+            members:
+              type: string
+              example: https://gitlab.example.com/api/v4/projects/4/members
+            cluster_agents:
+              type: string
+              example: https://gitlab.example.com/api/v4/projects/4/cluster_agents
+        packages_enabled:
+          type: boolean
+        empty_repo:
+          type: boolean
+        archived:
+          type: boolean
+        visibility:
+          type: string
+          example: public
+        owner:
+          $ref: '#/components/schemas/API_Entities_UserBasic'
+        resolve_outdated_diff_discussions:
+          type: boolean
+        container_expiration_policy:
+          $ref: '#/components/schemas/API_Entities_ContainerExpirationPolicy'
+        repository_object_format:
+          type: string
+          example: sha1
+        issues_enabled:
+          type: boolean
+        merge_requests_enabled:
+          type: boolean
+        wiki_enabled:
+          type: boolean
+        jobs_enabled:
+          type: boolean
+        snippets_enabled:
+          type: boolean
+        container_registry_enabled:
+          type: boolean
+        service_desk_enabled:
+          type: boolean
+        service_desk_address:
+          type: string
+          example: address@example.com
+        can_create_merge_request_in:
+          type: boolean
+        issues_access_level:
+          type: string
+          example: enabled
+        repository_access_level:
+          type: string
+          example: enabled
+        merge_requests_access_level:
+          type: string
+          example: enabled
+        forking_access_level:
+          type: string
+          example: enabled
+        wiki_access_level:
+          type: string
+          example: enabled
+        builds_access_level:
+          type: string
+          example: enabled
+        snippets_access_level:
+          type: string
+          example: enabled
+        pages_access_level:
+          type: string
+          example: enabled
+        analytics_access_level:
+          type: string
+          example: enabled
+        container_registry_access_level:
+          type: string
+          example: enabled
+        security_and_compliance_access_level:
+          type: string
+          example: enabled
+        releases_access_level:
+          type: string
+          example: enabled
+        environments_access_level:
+          type: string
+          example: enabled
+        feature_flags_access_level:
+          type: string
+          example: enabled
+        infrastructure_access_level:
+          type: string
+          example: enabled
+        monitor_access_level:
+          type: string
+          example: enabled
+        model_experiments_access_level:
+          type: string
+          example: enabled
+        model_registry_access_level:
+          type: string
+          example: enabled
+        emails_disabled:
+          type: boolean
+        emails_enabled:
+          type: boolean
+        shared_runners_enabled:
+          type: boolean
+        lfs_enabled:
+          type: boolean
+        creator_id:
+          type: integer
+          example: 1
+        mr_default_target_self:
+          type: boolean
+        import_url:
+          type: string
+          example: https://gitlab.com/gitlab/gitlab.git
+        import_type:
+          type: string
+          example: git
+        import_status:
+          type: string
+          example: none
+        import_error:
+          type: string
+          example: Import error
+        open_issues_count:
+          type: integer
+          example: 1
+        description_html:
+          type: string
+        updated_at:
+          type: string
+          format: date-time
+          example: 2020-05-07T04:27:17.016Z
+        ci_default_git_depth:
+          type: integer
+          example: 20
+        ci_delete_pipelines_in_seconds:
+          type: integer
+          example: 86400
+        ci_forward_deployment_enabled:
+          type: boolean
+        ci_forward_deployment_rollback_allowed:
+          type: boolean
+        ci_job_token_scope_enabled:
+          type: boolean
+        ci_separated_caches:
+          type: boolean
+        ci_allow_fork_pipelines_to_run_in_parent_project:
+          type: boolean
+        ci_id_token_sub_claim_components:
+          type: array
+          items:
+            type: string
+        build_git_strategy:
+          type: string
+          example: fetch
+        keep_latest_artifact:
+          type: boolean
+        restrict_user_defined_variables:
+          type: boolean
+        ci_pipeline_variables_minimum_override_role:
+          type: string
+        runners_token:
+          type: string
+          example: b8547b1dc37721d05889db52fa2f02
+        runner_token_expiration_interval:
+          type: integer
+          example: 3600
+        group_runners_enabled:
+          type: boolean
+        auto_cancel_pending_pipelines:
+          type: string
+          example: enabled
+        build_timeout:
+          type: integer
+          example: 3600
+        auto_devops_enabled:
+          type: boolean
+        auto_devops_deploy_strategy:
+          type: string
+          example: continuous
+        ci_push_repository_for_job_token_allowed:
+          type: boolean
+        ci_config_path:
+          type: string
+          example: ''
+        public_jobs:
+          type: boolean
+        shared_with_groups:
+          type: array
+          items:
+            type: string
+        only_allow_merge_if_pipeline_succeeds:
+          type: boolean
+        allow_merge_on_skipped_pipeline:
+          type: boolean
+        request_access_enabled:
+          type: boolean
+        only_allow_merge_if_all_discussions_are_resolved:
+          type: boolean
+        remove_source_branch_after_merge:
+          type: boolean
+        printing_merge_request_link_enabled:
+          type: boolean
+        merge_method:
+          type: string
+          example: merge
+        squash_option:
+          type: string
+          example: default_off
+        enforce_auth_checks_on_uploads:
+          type: boolean
+        suggestion_commit_message:
+          type: string
+          example: Suggestion message
+        merge_commit_template:
+          type: string
+          example: '%(title)'
+        squash_commit_template:
+          type: string
+          example: '%(source_branch)'
+        issue_branch_template:
+          type: string
+          example: '%(title)'
+        statistics:
+          $ref: '#/components/schemas/API_Entities_ProjectStatistics'
+        warn_about_potentially_unwanted_characters:
+          type: boolean
+        autoclose_referenced_issues:
+          type: boolean
+        max_artifacts_size:
+          type: integer
+        approvals_before_merge:
+          type: integer
+        mirror:
+          type: boolean
+        mirror_user_id:
+          type: string
+        mirror_trigger_builds:
+          type: string
+        only_mirror_protected_branches:
+          type: string
+        mirror_overwrites_diverged_branches:
+          type: string
+        external_authorization_classification_label:
+          type: string
+        marked_for_deletion_at:
+          type: string
+        marked_for_deletion_on:
+          type: string
+        requirements_enabled:
+          type: boolean
+        requirements_access_level:
+          type: string
+        security_and_compliance_enabled:
+          type: boolean
+        secret_push_protection_enabled:
+          type: boolean
+        pre_receive_secret_detection_enabled:
+          type: boolean
+        compliance_frameworks:
+          type: array
+        issues_template:
+          type: string
+        merge_requests_template:
+          type: string
+        ci_restrict_pipeline_cancellation_role:
+          type: string
+        merge_pipelines_enabled:
+          type: boolean
+        merge_trains_enabled:
+          type: boolean
+        merge_trains_skip_train_allowed:
+          type: boolean
+        only_allow_merge_if_all_status_checks_passed:
+          type: boolean
+        allow_pipeline_trigger_approve_deployment:
+          type: boolean
+        prevent_merge_without_jira_issue:
+          type: boolean
+        permissions:
+          type: object
+          properties:
+            project_access:
+              $ref: '#/components/schemas/API_Entities_ProjectAccess'
+            group_access:
+              $ref: '#/components/schemas/API_Entities_GroupAccess'
+      description: API_Entities_ProjectWithAccess model
+    API_Entities_ProjectAccess:
+      type: object
+      properties:
+        access_level:
+          type: string
+        notification_level:
+          type: string
+    API_Entities_GroupAccess:
+      type: object
+      properties:
+        access_level:
+          type: integer
+        notification_level:
+          type: integer
+    putApiV4ProjectsId:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the project
+          example: project
+        default_branch:
+          type: string
+          description: The default branch of the project
+          example: main
+        path:
+          type: string
+          description: The path of the repository
+          example: group/project
+        description:
+          type: string
+          description: The description of the project
+        build_git_strategy:
+          type: string
+          description: The Git strategy. Defaults to `fetch`
+          enum:
+          - fetch
+          - clone
+        build_timeout:
+          type: integer
+          description: Build timeout
+        auto_cancel_pending_pipelines:
+          type: string
+          description: Auto-cancel pending pipelines
+          enum:
+          - disabled
+          - enabled
+        ci_config_path:
+          type: string
+          description: The path to CI config file. Defaults to `.gitlab-ci.yml`
+        service_desk_enabled:
+          type: boolean
+          description: Disable or enable the service desk
+        issues_enabled:
+          type: boolean
+          description: Flag indication if the issue tracker is enabled
+        merge_requests_enabled:
+          type: boolean
+          description: Flag indication if merge requests are enabled
+        wiki_enabled:
+          type: boolean
+          description: Flag indication if the wiki is enabled
+        jobs_enabled:
+          type: boolean
+          description: Flag indication if jobs are enabled
+        snippets_enabled:
+          type: boolean
+          description: Flag indication if snippets are enabled
+        issues_access_level:
+          type: string
+          description: Issues access level. One of `disabled`, `private` or `enabled`
+          enum:
+          - disabled
+          - private
+          - enabled
+        repository_access_level:
+          type: string
+          description: Repository access level. One of `disabled`, `private` or `enabled`
+          enum:
+          - disabled
+          - private
+          - enabled
+        merge_requests_access_level:
+          type: string
+          description: Merge requests access level. One of `disabled`, `private` or `enabled`
+          enum:
+          - disabled
+          - private
+          - enabled
+        forking_access_level:
+          type: string
+          description: Forks access level. One of `disabled`, `private` or `enabled`
+          enum:
+          - disabled
+          - private
+          - enabled
+        wiki_access_level:
+          type: string
+          description: Wiki access level. One of `disabled`, `private` or `enabled`
+          enum:
+          - disabled
+          - private
+          - enabled
+        builds_access_level:
+          type: string
+          description: Builds access level. One of `disabled`, `private` or `enabled`
+          enum:
+          - disabled
+          - private
+          - enabled
+        snippets_access_level:
+          type: string
+          description: Snippets access level. One of `disabled`, `private` or `enabled`
+          enum:
+          - disabled
+          - private
+          - enabled
+        pages_access_level:
+          type: string
+          description: Pages access level. One of `disabled`, `private`, `enabled` or `public`
+          enum:
+          - disabled
+          - private
+          - enabled
+          - public
+        analytics_access_level:
+          type: string
+          description: Analytics access level. One of `disabled`, `private` or `enabled`
+          enum:
+          - disabled
+          - private
+          - enabled
+        container_registry_access_level:
+          type: string
+          description: Controls visibility of the container registry. One of `disabled`, `private` or `enabled`. `private` will make the container registry accessible only to project members (reporter role and above). `enabled` will make the container registry accessible to everyone who has access to the project. `disabled` will disable the container registry
+          enum:
+          - disabled
+          - private
+          - enabled
+        security_and_compliance_access_level:
+          type: string
+          description: Security and compliance access level. One of `disabled`, `private` or `enabled`
+          enum:
+          - disabled
+          - private
+          - enabled
+        releases_access_level:
+          type: string
+          description: Releases access level. One of `disabled`, `private` or `enabled`
+          enum:
+          - disabled
+          - private
+          - enabled
+        environments_access_level:
+          type: string
+          description: Environments access level. One of `disabled`, `private` or `enabled`
+          enum:
+          - disabled
+          - private
+          - enabled
+        feature_flags_access_level:
+          type: string
+          description: Feature flags access level. One of `disabled`, `private` or `enabled`
+          enum:
+          - disabled
+          - private
+          - enabled
+        infrastructure_access_level:
+          type: string
+          description: Infrastructure access level. One of `disabled`, `private` or `enabled`
+          enum:
+          - disabled
+          - private
+          - enabled
+        monitor_access_level:
+          type: string
+          description: Monitor access level. One of `disabled`, `private` or `enabled`
+          enum:
+          - disabled
+          - private
+          - enabled
+        model_experiments_access_level:
+          type: string
+          description: Model experiments access level. One of `disabled`, `private` or `enabled`
+          enum:
+          - disabled
+          - private
+          - enabled
+        model_registry_access_level:
+          type: string
+          description: Model registry access level. One of `disabled`, `private` or `enabled`
+          enum:
+          - disabled
+          - private
+          - enabled
+        emails_disabled:
+          type: boolean
+          description: 'Deprecated: Use emails_enabled instead.'
+        emails_enabled:
+          type: boolean
+          description: Enable email notifications
+        show_default_award_emojis:
+          type: boolean
+          description: Show default award emojis
+        show_diff_preview_in_email:
+          type: boolean
+          description: Include the code diff preview in merge request notification emails
+        warn_about_potentially_unwanted_characters:
+          type: boolean
+          description: Warn about potentially unwanted characters
+        enforce_auth_checks_on_uploads:
+          type: boolean
+          description: Enforce auth check on uploads
+        shared_runners_enabled:
+          type: boolean
+          description: Flag indication if shared runners are enabled for that project
+        group_runners_enabled:
+          type: boolean
+          description: Flag indication if group runners are enabled for that project
+        resolve_outdated_diff_discussions:
+          type: boolean
+          description: Automatically resolve merge request diff threads on lines changed with a push
+        remove_source_branch_after_merge:
+          type: boolean
+          description: Remove the source branch by default after merge
+        container_registry_enabled:
+          type: boolean
+          description: 'Deprecated: Use :container_registry_access_level instead. Flag indication if the container registry is enabled for that project'
+        container_expiration_policy_attributes:
+          type: object
+          properties:
+            cadence:
+              type: string
+              description: Container expiration policy cadence for recurring job
+            keep_n:
+              type: integer
+              description: Container expiration policy number of images to keep
+              format: int32
+            older_than:
+              type: string
+              description: Container expiration policy remove images older than value
+            name_regex:
+              type: string
+              description: Container expiration policy regex for image removal
+            name_regex_keep:
+              type: string
+              description: Container expiration policy regex for image retention
+            enabled:
+              type: boolean
+              description: Flag indication if container expiration policy is enabled
+        lfs_enabled:
+          type: boolean
+          description: Flag indication if Git LFS is enabled for that project
+        visibility:
+          type: string
+          description: The visibility of the project.
+          enum:
+          - private
+          - internal
+          - public
+        public_builds:
+          type: boolean
+          description: 'Deprecated: Use public_jobs instead.'
+        public_jobs:
+          type: boolean
+          description: Perform public builds
+        request_access_enabled:
+          type: boolean
+          description: Allow users to request member access
+        only_allow_merge_if_pipeline_succeeds:
+          type: boolean
+          description: Only allow to merge if builds succeed
+        allow_merge_on_skipped_pipeline:
+          type: boolean
+          description: Allow to merge if pipeline is skipped
+        only_allow_merge_if_all_discussions_are_resolved:
+          type: boolean
+          description: Only allow to merge if all threads are resolved
+        tag_list:
+          type: array
+          description: 'Deprecated: Use :topics instead'
+          items:
+            type: string
+        topics:
+          type: array
+          description: The list of topics for a project
+          items:
+            type: string
+        avatar:
+          type: string
+          description: Avatar image for project
+        printing_merge_request_link_enabled:
+          type: boolean
+          description: Show link to create/view merge request when pushing from the command line
+        merge_method:
+          type: string
+          description: The merge method used when merging merge requests
+          enum:
+          - ff
+          - rebase_merge
+          - merge
+        suggestion_commit_message:
+          type: string
+          description: The commit message used to apply merge request suggestions
+        merge_commit_template:
+          type: string
+          description: Template used to create merge commit message
+        squash_commit_template:
+          type: string
+          description: Template used to create squash commit message
+        issue_branch_template:
+          type: string
+          description: Template used to create a branch from an issue
+        auto_devops_enabled:
+          type: boolean
+          description: Flag indication if Auto DevOps is enabled
+        auto_devops_deploy_strategy:
+          type: string
+          description: Auto Deploy strategy
+          enum:
+          - continuous
+          - manual
+          - timed_incremental
+        autoclose_referenced_issues:
+          type: boolean
+          description: Flag indication if referenced issues auto-closing is enabled
+        repository_storage:
+          type: string
+          description: Which storage shard the repository is on. Available only to admins
+        packages_enabled:
+          type: boolean
+          description: Enable project packages feature
+        squash_option:
+          type: string
+          description: Squash default for project. One of `never`, `always`, `default_on`, or `default_off`.
+          enum:
+          - never
+          - always
+          - default_on
+          - default_off
+        mr_default_target_self:
+          type: boolean
+          description: Merge requests of this forked project targets itself by default
+        only_allow_merge_if_all_status_checks_passed:
+          type: boolean
+          description: Blocks merge requests from merging unless all status checks have passed
+        approvals_before_merge:
+          type: integer
+          description: How many approvers should approve merge request by default
+        mirror:
+          type: boolean
+          description: '[Deprecated] Enables pull mirroring in a project'
+        mirror_trigger_builds:
+          type: boolean
+          description: '[Deprecated] Pull mirroring triggers builds'
+        external_authorization_classification_label:
+          type: string
+          description: The classification label for the project
+        requirements_access_level:
+          type: string
+          description: Requirements feature access level. One of `disabled`, `private` or `enabled`
+          enum:
+          - disabled
+          - private
+          - enabled
+        prevent_merge_without_jira_issue:
+          type: boolean
+          description: Require an associated issue from Jira
+        ci_default_git_depth:
+          type: integer
+          description: Default number of revisions for shallow cloning
+        keep_latest_artifact:
+          type: boolean
+          description: Indicates if the latest artifact should be kept for this project.
+        ci_forward_deployment_enabled:
+          type: boolean
+          description: Prevent older deployment jobs that are still pending
+        ci_forward_deployment_rollback_allowed:
+          type: boolean
+          description: Allow job retries for rollback deployments
+        ci_allow_fork_pipelines_to_run_in_parent_project:
+          type: boolean
+          description: Allow fork merge request pipelines to run in parent project
+        ci_separated_caches:
+          type: boolean
+          description: Enable or disable separated caches based on branch protection.
+        restrict_user_defined_variables:
+          type: boolean
+          description: Restrict use of user-defined variables when triggering a pipeline
+        ci_pipeline_variables_minimum_override_role:
+          type: string
+          description: Limit ability to override CI/CD variables when triggering a pipeline to only users with at least the set minimum role
+          enum:
+          - no_one_allowed
+          - developer
+          - maintainer
+          - owner
+        ci_push_repository_for_job_token_allowed:
+          type: boolean
+          description: Allow pushing to this project's repository by authenticating with a CI/CD job token generated in this project.
+        ci_id_token_sub_claim_components:
+          type: array
+          description: Claims that will be used to build the sub claim in id tokens
+          items:
+            type: string
+        ci_delete_pipelines_in_seconds:
+          type: integer
+          description: Pipelines older than the configured time are deleted
+        max_artifacts_size:
+          type: integer
+          description: Set the maximum file size for each job's artifacts
+        allow_pipeline_trigger_approve_deployment:
+          type: boolean
+          description: Allow pipeline triggerer to approve deployments
+        mirror_user_id:
+          type: integer
+          description: '[Deprecated] User responsible for all the activity surrounding a pull mirror event. Can only be set by admins'
+        only_mirror_protected_branches:
+          type: boolean
+          description: '[Deprecated] Only mirror protected branches'
+        mirror_branch_regex:
+          type: string
+          description: '[Deprecated] Only mirror branches match regex'
+        mirror_overwrites_diverged_branches:
+          type: boolean
+          description: '[Deprecated] Pull mirror overwrites diverged branches'
+        import_url:
+          type: string
+          description: URL from which the project is imported
+        fallback_approvals_required:
+          type: integer
+          description: Overall approvals required when no rule is present
+        issues_template:
+          type: string
+          description: Default description for Issues. Description is parsed with GitLab Flavored Markdown.
+        merge_requests_template:
+          type: string
+          description: Default description for merge requests. Description is parsed with GitLab Flavored Markdown.
+        merge_pipelines_enabled:
+          type: boolean
+          description: Enable merged results pipelines.
+        merge_trains_enabled:
+          type: boolean
+          description: Enable merge trains.
+        merge_trains_skip_train_allowed:
+          type: boolean
+          description: Allow merge train merge requests to be merged without waiting for pipelines to finish.
+        ci_restrict_pipeline_cancellation_role:
+          type: string
+          description: Roles allowed to cancel pipelines and jobs.
+      description: Update an existing project
+  securitySchemes:
+    access_token_header:
+      type: apiKey
+      name: PRIVATE-TOKEN
+      in: header
+    access_token_query:
+      type: apiKey
+      name: private_token
+      in: query

@@ -1,0 +1,5 @@
+/target
+/.idea
+/.vscode
+/gitlab-activity-plugin
+/gitlab-activity-plugin.log

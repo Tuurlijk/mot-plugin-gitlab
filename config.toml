@@ -1,0 +1,18 @@
+# GitLab Activity Plugin Configuration
+
+# Set to true to activate the plugin in mot.
+enabled = true
+
+# Client configuration
+#[[clients]]
+#name = "Client Company"
+#gitlab_host = "gitlab.com"
+#gitlab_token = "glpat-asdfgasdfgasdfasdf"
+#author_email = "author@example.com"
+
+# Another client configuration
+#[[clients]]
+#name = "Client Company 2"
+#gitlab_host = "gitlab.com"
+#gitlab_token = "glpat-daggggagagagagd"
+#author_email = "author@example.com"
