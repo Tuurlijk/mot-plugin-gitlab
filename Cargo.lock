@@ -1007,6 +1007,31 @@ dependencies = [
 ]
 
 [[package]]
+name = "mot-plugin-gitlab"
+version = "0.2.2"
+dependencies = [
+ "anyhow",
+ "chrono",
+ "config",
+ "dirs",
+ "env_logger",
+ "jsonrpc-core",
+ "jsonrpc-stdio-server",
+ "log",
+ "once_cell",
+ "prettyplease",
+ "progenitor",
+ "progenitor-client",
+ "regex",
+ "reqwest",
+ "serde",
+ "serde_json",
+ "serde_yaml_ng",
+ "syn",
+ "tokio",
+]
+
+[[package]]
 name = "num-traits"
 version = "0.2.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2468,31 +2493,6 @@ name = "writeable"
 version = "0.5.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1e9df38ee2d2c3c5948ea468a8406ff0db0b29ae1ffde1bcf20ef305bcc95c51"
-
-[[package]]
-name = "wut"
-version = "0.2.2"
-dependencies = [
- "anyhow",
- "chrono",
- "config",
- "dirs",
- "env_logger",
- "jsonrpc-core",
- "jsonrpc-stdio-server",
- "log",
- "once_cell",
- "prettyplease",
- "progenitor",
- "progenitor-client",
- "regex",
- "reqwest",
- "serde",
- "serde_json",
- "serde_yaml_ng",
- "syn",
- "tokio",
-]
 
 [[package]]
 name = "yaml-rust2"
