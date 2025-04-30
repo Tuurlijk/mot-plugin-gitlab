@@ -361,7 +361,7 @@ jobs:
           mkdir -p release
           BINARY_PATH="target/${{ matrix.target }}/release/${{ steps.extract-binary.outputs.BINARY_NAME }}"
           cp $BINARY_PATH release/
-          cp LICENSE install.sh README.md release/ || echo "LICENSE or README.md not found, skipping"
+          cp LICENSE install.sh manifest.toml README.md release/ || echo "LICENSE or README.md not found, skipping"
           # Add version info file
           echo "Version: ${{ steps.extract-version.outputs.VERSION }}" > release/VERSION
           echo "Build Date: $(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> release/VERSION
@@ -378,7 +378,7 @@ jobs:
           mkdir release
           BINARY_PATH="target/${{ matrix.target }}/release/${{ steps.extract-binary.outputs.BINARY_NAME }}${{ matrix.is_windows && '.exe' || '' }}"
           cp $BINARY_PATH release/
-          cp LICENSE install.shREADME.md release/ || echo "LICENSE or README.md not found, skipping"
+          cp LICENSE install.sh manifest.toml README.md release/ || echo "LICENSE or README.md not found, skipping"
           # Add version info file
           echo "Version: ${{ steps.extract-version.outputs.VERSION }}" > release/VERSION
           echo "Build Date: $(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> release/VERSION
