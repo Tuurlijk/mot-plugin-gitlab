@@ -26,8 +26,8 @@ This plugin is designed to be installed using the provided script within its dis
 
 ### Steps (Linux / macOS)
 
-1.  **Download and Extract**: Obtain the plugin release package (e.g., `gitlab-activity-plugin-vX.Y.Z.tar.gz` or `.zip`) and extract it. You should find these core files:
-    *   `gitlab-activity-plugin` (the executable)
+1.  **Download and Extract**: Obtain the plugin release package (e.g., `mot-plugin-gitlab-vX.Y.Z.tar.gz` or `.zip`) and extract it. You should find these core files:
+    *   `mot-plugin-gitlab` (the executable)
     *   `manifest.toml` (plugin metadata)
     *   `config.toml` (configuration template)
     *   `install.sh` (installation script)
@@ -35,14 +35,14 @@ This plugin is designed to be installed using the provided script within its dis
 
 2.  **Navigate**: Open your terminal and `cd` into the extracted directory:
     ```bash
-    cd /path/to/extracted/gitlab-activity-plugin
+    cd /path/to/extracted/mot-plugin-gitlab
     ```
 
 3.  **Run Installer**: Execute the installation script:
     ```bash
     bash ./install.sh
     ```
-    *   This copies the plugin files (`gitlab-activity-plugin`, `manifest.toml`, `config.toml`) to the correct Mot plugin directory (`~/.config/mot/plugins/gitlab-activity-plugin/`).
+    *   This copies the plugin files (`mot-plugin-gitlab`, `manifest.toml`, `config.toml`) to the correct Mot plugin directory (`~/.config/mot/plugins/mot-plugin-gitlab/`).
     *   It sets execute permissions for the plugin binary.
     *   **Note**: If a `config.toml` already exists in the destination, it will *not* be overwritten.
 
@@ -55,13 +55,13 @@ This plugin is designed to be installed using the provided script within its dis
 After installation, you **must** configure the plugin by editing its configuration file.
 
 *   **Location**: The configuration file is located at:
-    *   Linux/macOS: `~/.config/mot/plugins/gitlab-activity-plugin/config.toml`
-    *   Windows: `%APPDATA%\mot\plugins\gitlab-activity-plugin\config.toml` (Manual installation might be needed for Windows currently)
+    *   Linux/macOS: `~/.config/mot/plugins/mot-plugin-gitlab/config.toml`
+    *   Windows: `%APPDATA%\mot\plugins\mot-plugin-gitlab\config.toml` (Manual installation might be needed for Windows currently)
 
 *   **Editing**: Open the `config.toml` file in a text editor. You need to provide details for each GitLab instance you wish to monitor within `[[clients]]` blocks.
 
     ```toml
-    # Example config.toml for gitlab-activity-plugin
+    # Example config.toml for mot-plugin-gitlab
 
     # Global setting for the plugin (part of manifest/standard plugin config)
     enabled = true
@@ -114,10 +114,10 @@ To remove the plugin:
 1.  Delete the plugin's directory:
     ```bash
     # Linux / macOS
-    rm -rf ~/.config/mot/plugins/gitlab-activity-plugin
+    rm -rf ~/.config/mot/plugins/mot-plugin-gitlab
 
     # Windows (adjust path as needed)
-    # rmdir /s /q %APPDATA%\mot\plugins\gitlab-activity-plugin
+    # rmdir /s /q %APPDATA%\mot\plugins\mot-plugin-gitlab
     ```
 2.  Restart MOT.
 

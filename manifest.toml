@@ -5,5 +5,5 @@ description = "Fetch GitLab commit activity as time entries"
 icon = "🦊"
 
 [executable]
-default = "gitlab-activity-plugin"
-windows = "gitlab-activity-plugin.exe" 
+default = "mot-plugin-gitlab"
+windows = "mot-plugin-gitlab.exe" 

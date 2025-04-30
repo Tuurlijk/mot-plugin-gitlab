@@ -619,7 +619,7 @@ pub(crate) fn get_log_file_path() -> PathBuf {
     let exe_dir = exe_path
         .parent()
         .unwrap_or_else(|| std::path::Path::new("."));
-    exe_dir.join("gitlab-activity-plugin.log")
+    exe_dir.join("mot-plugin-gitlab.log")
 }
 
 /// Helper function to log important events to a file, ONLY if log level is Debug or higher

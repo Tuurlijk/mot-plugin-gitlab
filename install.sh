@@ -5,13 +5,13 @@ set -e
 
 # --- Configuration ---
 # These names should match the files included in the distribution package alongside this script.
-DIST_BINARY_NAME="gitlab-activity-plugin"  # The name of the executable file provided
+DIST_BINARY_NAME="mot-plugin-gitlab"  # The name of the executable file provided
 DIST_MANIFEST_NAME="manifest.toml"         # The name of the manifest file provided
 DIST_CONFIG_NAME="config.toml"             # The name of the config file provided (should be a template/example)
 
 # This name will be used for the subdirectory within ~/.config/mot/plugins/
 # It often makes sense to keep this the same as the binary name.
-PLUGIN_SUBDIR_NAME="gitlab-activity-plugin"
+PLUGIN_SUBDIR_NAME="mot-plugin-gitlab"
 
 # User-facing name for messages
 PLUGIN_DISPLAY_NAME="GitLab Activity Plugin"
