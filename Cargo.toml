@@ -1,6 +1,6 @@
 [package]
 name = "mot-plugin-gitlab"
-version = "0.2.4"
+version = "0.2.5"
 description = "GitLab Activity Plugin for MOT"
 edition = "2021"
 authors = ["Michiel Roos <mot.free.bra@michielroos.com>"]
